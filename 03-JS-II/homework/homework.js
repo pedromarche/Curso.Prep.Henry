@@ -66,19 +66,31 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
-  if (color === 'blue'){
-    return 'This is blue';
+  // if (color === 'blue'){
+  //   return 'This is blue';
+  // }
+  // if (color === 'red'){
+  //   return 'This is red';
+  // }
+  // if (color === 'green'){
+  //   return 'This is green';
+  // }
+  // if (color === 'orange'){
+  //   return 'This is orange';
+  // }
+  //   return 'Color not found';
+  switch (color){
+    case 'blue':
+      return'This is blue';
+    case 'red':
+      return'This is red';
+    case 'green':
+      return'This is green';
+    case 'orange':
+      return'This is orange';
+    default:
+     return'Color not found';
   }
-  if (color === 'red'){
-    return 'This is red';
-  }
-  if (color === 'green'){
-    return 'This is green';
-  }
-  if (color === 'orange'){
-    return 'This is orange';
-  }
-    return 'Color not found';
 }
 
 function esDiezOCinco(numero) {
@@ -109,7 +121,7 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-  if (Math.floor(numero) || numero === 0){
+  if (numero === Math.floor(numero)){
     return true;
   }
     return false;
@@ -164,9 +176,6 @@ function esPrimo(numero) {
 if ( numero < 2 ){
   return false;
 }
-if ( numero === 2){
-  return true;
-}
 for ( i = 2; i < numero; i++ ){
   if ( numero % i === 0){
     return false;
@@ -192,14 +201,13 @@ function esVerdadero(valor){
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
-  //Escribe tu código aquí
-  for (i = 0; i < 61; i++){
-    if (i % 6 === 0){
-      return [ i ];
-    }
+  //Escribe tu ódigo  
+  var arrayTablaSeis = []; 
+  for (var i = 0; i < 11; i++){  
+     arrayTablaSeis.push(i * 6);
+   }
+   return arrayTablaSeis;
   }
-}
-
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
