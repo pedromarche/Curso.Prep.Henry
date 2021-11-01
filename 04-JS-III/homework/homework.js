@@ -162,7 +162,8 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  if(n[0] % 9 === 0){
+  var toString = n.toString();
+  if(toString[0] === '9'){
     return true;
   }
     return false;
@@ -223,12 +224,19 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  var aumento = [];
-  do{
-    numero = numero + 2;
-    aumento = aumento + numero;
-  }while(aumento < 10);
-  return aumento;
+  var nuevoValor = [];
+  var contador = 0;
+  while (contador < 10) {
+    if (numero !== contador) {
+      numero += 2;
+      contador += 1;
+      nuevoValor.push(numero);
+    } else if (numero === contador) {
+        return 'Se interrumpió la ejecución';
+      }
+  }
+    return nuevoValor;
+  
 }
 
 
@@ -239,6 +247,14 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  var nuevoArray = [];
+
+  for (var i = 0; i < 10 ; i++) {
+    if (i === 5) continue;
+    numero = numero + 2;
+    nuevoArray.push(numero);
+  }
+  return nuevoArray;
 }
 
 
