@@ -4,16 +4,31 @@ h1{
 img{
     width:400px;
 }
-
+ul{
+    position:relative;
+}
 #thirdDiv{
     height: 600px;
     width: 500px;
     background-color: rgba(224, 156, 30, 0.76);
     padding: 50px;
     border: 10px rgba(95, 226, 43, 0.774) dashed;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    bottom: 25%;
+    margin: -25px -25px -25px -25px
+    
+    
 }
 
 #spanId{
     font-size: 18px;
     margin: 50px;
+}
+html{
+    background-image: url("https://s1.eestatic.com/2019/03/29/cocinillas/actualidad-gastronomica/cocina-decoracion-actualidad_gastronomica_386972479_119069803_1706x960.jpg");
+}
+div{
+    text-align: center;
 }
