@@ -1,0 +1,17 @@
+img{
+    height: 200px;
+    width: 200px;
+}
+html{
+    background:rgba(224, 236, 236, 0.986);
+}
+.flexbox{
+    align-items: center;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    width: 200px;
+  
+    background: #ffff99;
+    color: #333;
+}
