@@ -10,6 +10,8 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+ return Object.entries(objeto);
+
 }
 
 
@@ -18,6 +20,12 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var objeto = {};
+  for(var i=0; i<string.length; i++){
+        objeto[string[i]] = ( objeto[string[i]] || 0 ) + 1;
+    }
+    return objeto;
+
 }
 
 
@@ -26,6 +34,17 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var mayuscula = '';
+  var minuscula = '';
+  for (i = 0; i<s.length; i++){ 
+     if(s[i] === s[i].toUpperCase()){ 
+          mayuscula = mayuscula + s[i]; 
+       }
+   else {
+          minuscula = minuscula + s[i];
+        } 
+   }       
+  return (mayuscula + minuscula); 
 }
 
 
@@ -35,6 +54,15 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  var palabrasReves = '';
+  var matrizStr = '';
+
+  matrizStr = str.split(' ');
+  for(var i = 0; i<matrizStr.length; i++){
+    palabrasReves = matrizStr[i].split('').reverse().join('');
+    matrizStr[i] = palabrasReves;
+  }
+  return matrizStr = matrizStr.join(' ');
 } 
 
 
@@ -43,6 +71,21 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  c = numero.toString();
+ inversa=[];
+  normal=[];
+  for(var i=1 ; i<=c.length ; i++){
+    inversa.push(c.charAt(c.length-i));
+  }
+  for(var j=0 ; j<c.length; j++){
+    normal.push(c.charAt(j));
+  }
+  if(inversa.join() === normal.join()){
+        return "Es capicua";
+  }
+  else if(inversa!=normal){
+        return "No es capicua";
+  }
 }
 
 
