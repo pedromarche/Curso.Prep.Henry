@@ -77,8 +77,8 @@ function capicua(numero){
   for(var i=1 ; i<=c.length ; i++){
     inversa.push(c.charAt(c.length-i));
   }
-  for(var j=0 ; j<c.length; j++){
-    normal.push(c.charAt(j));
+  for(var i=0 ; i<c.length; i++){
+    normal.push(c.charAt(i));
   }
   if(inversa.join() === normal.join()){
         return "Es capicua";
@@ -93,13 +93,24 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
-}
+  var cadena2 = "";
+  for(var i = 0; i< cadena.length; i++){
+    if(cadena[i] !== 'a' && cadena[i] !== 'b' && cadena[i] !== 'c'){
+      cadena2 = cadena2 + cadena[i];
+    }
+  }
+    return cadena2;
+  }
 
 
 function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  var array = arr.sort(function(a, b){
+    return a.length - b.length;
+  });
+  return array;
 }
 
 
@@ -109,6 +120,16 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+  var arreglo = [];
+
+  for(var i = 0; i < arreglo1.length; i++){
+    for(var j = 0; j < arreglo2.length; j++){
+      if(arreglo1[i] === arreglo2[j]){
+        arreglo.push(arreglo1[i]);
+      }
+    }
+  }
+  return arreglo;
 }
 
 
